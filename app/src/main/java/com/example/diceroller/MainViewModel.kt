@@ -12,9 +12,6 @@ class MainViewModel: ViewModel(){
     private val _diceImage = MutableStateFlow(R.drawable.empty_dice)
     val diceImage: StateFlow<Int> get() = _diceImage
 
-    private val _playerName = MutableStateFlow("")
-    val playerName: StateFlow<String> get() = _playerName
-
     fun rollDice(){
         _diceNumber.value = Random.nextInt(6)+1
         _diceImage.value = when(_diceNumber.value){
